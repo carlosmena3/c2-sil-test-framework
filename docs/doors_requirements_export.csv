@@ -1,0 +1,11 @@
+Req_ID,Object_Text,Allocated_System,Verification_Method,Safety_Level
+REQ-RADAR-001,"El subsistema radar SHALL emitir reportes de telemetría con azimut en rango [0.0, 360.0) grados y elevación en rango [-90.0, 90.0] grados. Cualquier valor fuera de rango es inválido y debe ser rechazado.",RADAR,Test,DAL-B
+REQ-RADAR-002,"El subsistema radar SHALL emitir actualizaciones de blancos a una frecuencia mínima de 10 Hz (un reporte cada 100 ms como máximo).",RADAR,Test,DAL-B
+REQ-RADAR-003,"El subsistema radar SHALL incluir un campo de distancia (distance_nm) en rango [0.0, 500.0] millas náuticas en cada reporte de telemetría.",RADAR,Test,DAL-C
+REQ-RADAR-004,"El subsistema radar SHALL asignar números de secuencia monotónicamente crecientes a cada trama de telemetría emitida durante una sesión operativa.",RADAR,Test,DAL-C
+REQ-ACT-001,"El subsistema de actuador SHALL procesar un comando de posición de antena y emitir un ACK con la posición alcanzada en un tiempo máximo de 40 ms desde la recepción del comando.",ACTUATOR,Test,DAL-A
+REQ-ACT-002,"El subsistema de actuador SHALL rechazar (NACK) cualquier comando con azimut fuera del rango [0.0, 360.0) grados o elevación fuera de [-90.0, 90.0] grados.",ACTUATOR,Test,DAL-A
+REQ-SYS-001,"El sistema C2 SHALL procesar una trama de telemetría radar y despachar un comando de orientación al subsistema de actuador en un tiempo máximo de 50 ms desde la recepción del reporte.",C2,Test,DAL-A
+REQ-SYS-002,"El sistema C2 SHALL mantener la última posición de blanco conocida y actualizarla ante cada nuevo reporte de telemetría válido.",C2,Test,DAL-B
+REQ-SYS-ROB-001,"El subsistema receptor SHALL descartar silenciosamente cualquier trama con checksum inválido, emitir una notificación de error NACK y permanecer operativo (sin terminación de proceso).",ALL,Test,DAL-A
+REQ-SYS-ROB-002,"El subsistema receptor SHALL descartar silenciosamente cualquier trama con PAYLOAD_LEN declarado inconsistente con los bytes recibidos y permanecer operativo.",ALL,Test,DAL-A
